@@ -1,14 +1,29 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>VideoPlayer</title>
-  <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+<head>
+	<meta charset="utf-8">
+	<title>VideoPlayer</title>
+	<base href="/">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
-  <app-root></app-root>
+	<app-root></app-root>
+	<!-- Google API - set the api key -->
+	<script>
+		function init() {
+			gapi.client.setApiKey('AIzaSyB4B-VaIorX4R68LxUpjbASwMp9wgq-x_E');
+			gapi.client.load("youtube", "v3", function () {
+				console.log('YoutubeLoaderReady', gapi);
+				window.youtubeService = gapi
+			});
+		}
+	</script>
+	<!-- Google API -->
+	<script src="https://apis.google.com/js/client.js?onload=init"></script>
 </body>
+
 </html>

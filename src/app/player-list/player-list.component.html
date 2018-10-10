@@ -1,0 +1,6 @@
+<div *ngIf="divStatus">
+        <p>Up next</p>
+        <div *ngFor="let video of videoData">
+            <img class="mb-3 width-100" src="{{video['imgUrl']}}" alt="" (click)="onClick(video['id'])">
+        </div>
+</div>
