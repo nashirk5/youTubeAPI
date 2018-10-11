@@ -13,6 +13,7 @@
 								<button class="btn btn-outline-secondary" type="submit" id="searchBtn">Go</button>
 							</div>
 						</div>
+						<span class="error" *ngIf="!searchForm.controls['search'].valid && searchForm.controls['search'].dirty">Please enter the keyword</span>
 					</form>
 				</div>
 				<div class="col-md-12">

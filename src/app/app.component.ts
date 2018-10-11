@@ -21,8 +21,10 @@ export class AppComponent implements OnInit {
 
 	// Search videos fun
 	searchVideos() {
-		let key = this.searchForm.controls['search'].value;
-		this._youtubeservice.getVideoEmitter.next(key);
+		if (this.searchForm.valid) {
+			let key = this.searchForm.controls['search'].value;
+			this._youtubeservice.getVideoEmitter.next(key);
+		}
 	}
 
 }
